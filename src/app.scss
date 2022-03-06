@@ -1,0 +1,31 @@
+@import "./global.scss";
+
+
+.app{
+    height: 100vh;
+    .sections{
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: lightsalmon;
+        position: relative;
+        top: 70px;
+        //ele ir para o id de maneira suave
+        scroll-behavior: smooth;
+        //rolar para a parte que está automaticamente
+        scroll-snap-type: y mandatory;
+        //desaparecer o scroll lateral
+        scrollbar-width: none;//para firefox
+        //desaparecer o scroll lateral
+        &::-webkit-scrollbar{//para todos browsers
+            display: none;
+        }
+
+        //para cada elemento dentro de sections
+        >*{
+            width: 100vw;
+            height: calc(100vh - 70px);
+            //rolar para a parte que está automaticamente
+            scroll-snap-align: start;
+        }
+    }
+}
